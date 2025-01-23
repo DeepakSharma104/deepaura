@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Body Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    user-select: none;  /* Prevent text selection */
+    background-color: #f8f4e1;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 120px 0;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hero-section:hover h1 {
+    transform: translateY(-10px);
+}
+
+.hero-section:hover p {
+    opacity: 0.8;
+}
+
+/* Card Layout */
+.card {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #fef2d7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 320px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-title {
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #d1a057;
+    margin-top: 8px;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive Card Layout */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    justify-content: center;
+}
+
+/* Footer */
+.footer {
+    font-size: 0.9rem;
+    background-color: #3e2b19;
+    color: #d1a057;
+    padding: 30px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.footer:hover {
+    background-color: #2b1f13;
+}
+
+/* Social Media Icons */
+.social-media a img {
+    width: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover img {
+    transform: scale(1.1);
+}
+
+/* Search Input Styles */
+.inputBox_container {
+    display: flex;
+    align-items: center;
+    background-color: #080807;
+    border-radius: 0.8em;
+    overflow: hidden;
+    max-width: 172px;
+    height:34px;
+    margin-top: 10px;
+    transition: width 0.3s ease;
+}
+
+.inputBox_container:hover {
+    width: 280px;
+}
+
+.search_icon {
+    height: 1em;
+    padding: 0 0.5em;
+    fill: #ffca1c;
+}
+
+.inputBox {
+    background-color: transparent;
+    color: #ffffff;
+    outline: none;
+    width: 100%;
+    border:  0;
+    padding: 0.5em 1.5em;
+    font-size: 1em;
+}
+
+::placeholder {
+    color: #868a91;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .inputBox_container {
+        max-width: 100%;
+    }
+
+    .inputBox {
+        padding: 0.5em 1.2em;
+    }
+
+    .search_icon {
+        height: 0.9em;
+    }
+}
+
+/* Larger Screens */
+@media (min-width: 1200px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card img {
+        height: 230px;
+    }
+}
+
+/* Search Icon Animation */
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    fill: #bdbecb;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Quick View Overlay */
+.quick-view-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.quick-view-overlay img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.quick-view-overlay img:hover {
+    transform: scale(1.05);
+}
+
+.container a {
+    border-radius: 20%;
+    box-shadow: 0 4px 10px rgba(0, 0.1, 0.2, 0.5);
+    transition: all 0.3s ease;
+    color: #ffc320a8;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.container a:hover {
+    background-color: #181515a8;
+    color: #ffffff;
+}
+/* Responsive Enhancements and Improved Card Hover */
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.card img {
+    transition: transform 0.3s ease-in-out;
+}
+.card img:hover {
+    transform: scale(1.05);
+}
+/* Responsive Enhancements and Improved Card Hover */
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.card img {
+    transition: transform 0.3s ease-in-out;
+}
+.card img:hover {
+    transform: scale(1.05);
+}
+/* Smooth transition for Quick View modal */
+.modal-content {
+    transition: all 0.3s ease-in-out;
+}
+/* Fixed Size Quick View Modal Enhancements */
+#quickViewModal .modal-dialog {
+    width: 400px;       /* Fixed width for consistency */
+    max-width: 400px;   /* Prevents resizing */
+    height: 500px;      /* Fixed height for consistency */
+}
+
+#quickViewModal .modal-content {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fef2d7;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#quickViewModal .modal-header,
+#quickViewModal .modal-body {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#modalProductImage {
+    width: 300px;       /* Fixed width */
+    height: 300px;      /* Fixed height */
+    border-radius: 6px;
+    object-fit: cover;  /* Ensures image fits within specified dimensions */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+#modalProductName {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #49331c;
+}
+
+#modalProductPrice {
+    font-size: 1.1rem;
+    color: #d1a057;
+    margin: 8px 0;
+}
+
+#modalProductDescription {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+    max-height: 60px;    /* Limits height for long descriptions */
+    overflow: hidden;    /* Ensures overflow text is hidden */
+}
+/* Checkout Modal Styling */
+#checkoutModal .modal-dialog {
+    width: 450px;          /* Consistent width for the checkout modal */
+    max-width: 100%;
+    margin: auto;
+}
+
+#checkoutModal .modal-content {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8f4e1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#checkoutModal .modal-header,
+#checkoutModal .modal-body,
+#checkoutModal .modal-footer {
+    text-align: center;
+}
+
+#checkoutModal .modal-header h5 {
+    font-size: 1.4rem;
+    color: #49331c;
+    font-weight: 700;
+}
+
+#checkoutModal .form-control {
+    border-radius: 5px;
+    border: 1px solid #d1a057;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+#checkoutModal .form-label {
+    color: #49331c;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#checkoutModal .btn-primary {
+    background-color: #d1a057;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#checkoutModal .btn-primary:hover {
+    background-color: #b88e47;
+}
+
+#checkoutModal #totalPriceDisplay, 
+#checkoutModal #productNamesDisplay {
+    font-weight: 600;
+    color: #d1a057;
+}
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    #quickViewModal .modal-dialog,
+    #checkoutModal .modal-dialog {
+        width: 95%;        /* Increased width for mobile screens */
+    }
+
+    #modalProductImage {
+        max-width: 90%;    /* Make image smaller on mobile screens */
+    }
+
+    .card {
+        max-width: 100%;   /* Allow cards to take full width on mobile */
+    }
+    
+    .card-title {
+        font-size: 1.1rem; /* Slightly smaller font on mobile */
+    }
+    
+    .card-text {
+        font-size: 0.9rem; /* Adjust font size on mobile */
+    }
+
+    #checkoutModal .modal-header h5,
+    #modalProductName {
+        font-size: 1.2rem; /* Smaller font for modal titles */
+    }
+}
